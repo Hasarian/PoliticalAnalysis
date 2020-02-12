@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<types>
+    <type code="ODJS">Ordre du jour de séance plénière</type>
+    <type code="QA">Question d'actualité</type>
+    <type code="ODJC">Ordre du jour de commission ou de comité</type>
+    <type code="CRA">Compte rendu analytique/avancé - Séance plénière</type>
+    <type code="CRAC">Compte rendu analytique/avancé - Commission ou comité</type>
+    <type code="CRI">Compte rendu intégral - séance plénière</type>
+    <type code="CRIC">Compte rendu intégral - Commission ou comité</type>
+    <type code="BT">Bulletin des travaux</type>
+    <type code="BUDGET">Document budgétaire</type>
+    <type code="COCC">Cahier d'observations de la Cour des comptes</type>
+</types>
