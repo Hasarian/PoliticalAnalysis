@@ -1,5 +1,6 @@
 package main.java.be.demoustiez.politicalAnalysisAPI.model;
 
+import javax.swing.*;
 import java.util.GregorianCalendar;
 
 public class Publication {
@@ -7,12 +8,12 @@ public class Publication {
     private String type;
     private String reference;
     private GregorianCalendar date;
-    private Integer idLegislation;
-    private Integer idSession;
+    private Legislature legislation;
+    private Session session;
     private String title;
     private String fileName;
     private String fileLink;
-    private Integer idCommission;
+    private Commission commission;
 
     public void setDate(String dateDay, String hourMinute) {
         date = new GregorianCalendar();
@@ -46,21 +47,6 @@ public class Publication {
         this.reference = reference;
     }
 
-    public Integer getIdLegislation() {
-        return idLegislation;
-    }
-
-    public void setIdLegislation(Integer idLegislation) {
-        this.idLegislation = idLegislation;
-    }
-
-    public Integer getIdSession() {
-        return idSession;
-    }
-
-    public void setIdSession(Integer idSession) {
-        this.idSession = idSession;
-    }
 
     public String getTitle() {
         return title;
@@ -86,15 +72,31 @@ public class Publication {
         this.fileLink = fileLink;
     }
 
-    public Integer getIdCommission() {
-        return idCommission;
-    }
-
-    public void setIdCommission(Integer idCommission) {
-        this.idCommission = idCommission;
-    }
-
     public GregorianCalendar getDate() {
         return date;
+    }
+
+    public Legislature getLegislation() {
+        return legislation;
+    }
+
+    public void setLegislation(Legislature legislation) {
+        this.legislation = legislation;
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+
+    public Commission getCommission() {
+        return commission;
+    }
+
+    public void setCommission(Commission commission) {
+        this.commission = commission;
     }
 }

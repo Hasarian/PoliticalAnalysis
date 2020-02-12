@@ -8,7 +8,7 @@ import java.util.List;
 public class Event {
     private Integer id;
     private Integer idCommission;
-    private String objet;
+    private String subject;
     private Integer weekNumber;
     private GregorianCalendar date;
 
@@ -44,13 +44,6 @@ public class Event {
         this.weekNumber = weekNumber;
     }
 
-    public String getObjet() {
-        return objet;
-    }
-
-    public void setObjet(String objet) {
-        this.objet = objet;
-    }
 
     public Integer getIdCommission() {
         return idCommission;
@@ -74,5 +67,13 @@ public class Event {
 
     public void setEventPublications(List<Publication> eventPublications) {
         this.eventPublications = eventPublications;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 }

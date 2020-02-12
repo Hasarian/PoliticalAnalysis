@@ -1,7 +1,5 @@
 package main.java.be.demoustiez.politicalAnalysisAPI.model.dto.WP;
 
-import main.java.be.demoustiez.politicalAnalysisAPI.model.Agenda;
-
 public class AgendaWrapper {
     private AgendaInfo agenda_infos;
     private Agenda agenda;
