@@ -18,6 +18,10 @@ public class ConfigurationLoader {
 
     private HashMap<String,String> publicationTypes=new HashMap<>();
 
+    public ConfigurationLoader(){
+        loadPublicationTypes();
+    }
+
     public void loadPublicationTypes(){
         Document xmlConfiguration = getStAXParsedDocument();
         Element rootNode = xmlConfiguration.getRootElement();
