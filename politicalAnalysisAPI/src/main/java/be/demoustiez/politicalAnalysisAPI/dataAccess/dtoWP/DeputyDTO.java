@@ -1,6 +1,7 @@
-package main.java.be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
+package be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
 
-import main.java.be.demoustiez.politicalAnalysisAPI.configuration.Constants;
+
+import be.demoustiez.politicalAnalysisAPI.configuration.Constants;
 
 public class DeputyDTO {
     private DeputeesInfos deputes_infos;
@@ -22,7 +23,7 @@ public class DeputyDTO {
         this.deputes = deputes;
     }
 
-    private class DeputeesInfos{
+    public class DeputeesInfos{
         private Integer dep_count;
 
         public Integer getDep_count() {
@@ -33,7 +34,7 @@ public class DeputyDTO {
             this.dep_count = dep_count;
         }
     }
-    private class Deputy{
+    public class Deputy{
         private Integer dep_id;
         private String dep_nomcomplet;
         private String dep_nom;
@@ -260,7 +261,7 @@ public class DeputyDTO {
             this.dep_social_nt = dep_social_nt;
         }
 
-        private class Address{
+        public class Address{
             private String dep_adresse;
             private String dep_cp;
             private String dep_localite;
@@ -289,7 +290,7 @@ public class DeputyDTO {
                 this.dep_localite = dep_localite;
             }
         }
-        private class SocialNetworkInfo{
+        public class SocialNetworkInfo{
             private String dep_facebook;
             private String dep_twitter;
 

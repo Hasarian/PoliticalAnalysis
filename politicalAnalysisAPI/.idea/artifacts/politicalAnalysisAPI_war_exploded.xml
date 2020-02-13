@@ -7,6 +7,7 @@
           <element id="module-output" name="politicalAnalysisAPI" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.3.RELEASE" />

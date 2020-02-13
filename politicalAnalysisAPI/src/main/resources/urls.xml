@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<urls>
+    <url code="baseURL">https://www.parlement-wallonie.be/opendata</url>
+    <url code="deputees">/composition_dep_od.php</url>
+    <url code="commissions">/commissions_od.php</url>
+    <url code="legislatures">/legislatures_od.php</url>
+    <url code="sessions">/sessions_od.php</url>
+    <url code="publications">/publications_od.php</url>
+    <url code="agenda">/agenda_od.php</url>
+    <url code="composition">/composition_com_od.php</url>
+</urls>

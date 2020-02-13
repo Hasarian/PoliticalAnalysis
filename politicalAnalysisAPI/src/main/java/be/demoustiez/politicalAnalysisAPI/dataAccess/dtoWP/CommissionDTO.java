@@ -1,4 +1,4 @@
-package main.java.be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
+package be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
 
 public class CommissionDTO {
     private CommissionsInfo commissions_infos;
