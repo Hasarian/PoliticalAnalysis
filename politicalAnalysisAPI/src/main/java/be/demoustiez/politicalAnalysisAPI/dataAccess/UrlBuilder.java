@@ -25,7 +25,7 @@ public class UrlBuilder<T> {
         this.resourceLoader=resources;
     }
 
-    protected T sendRequest(HashMap<String,String>args){
+    public T sendRequest(HashMap<String,String>args){
         args.put(jsonResponseTag,jsonResponseValue);
         HttpURLConnection con=null;
         T responseContent=null;
