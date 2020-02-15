@@ -20,7 +20,7 @@ public class CompositionDTO {
         this.membres = membres;
     }
 
-    private class Commission{
+    public class Commission{
         private Integer nb_commissions;
         private Integer com_id;
         private String com_nom;
@@ -94,7 +94,7 @@ public class CompositionDTO {
             this.nb_suppleants = nb_suppleants;
         }
     }
-    private class Member{
+    public class Member{
         private Integer dep_id;
         private String dep_nom;
         private String dep_prenom;
@@ -222,7 +222,7 @@ public class CompositionDTO {
             this.dep_id = dep_id;
         }
 
-        private class SocialNetworkInfo{
+        public class SocialNetworkInfo{
             private String dep_facebook;
             private String dep_twitter;
         }

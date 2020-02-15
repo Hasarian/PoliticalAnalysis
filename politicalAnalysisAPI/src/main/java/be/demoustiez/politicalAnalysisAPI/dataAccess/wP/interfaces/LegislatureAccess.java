@@ -6,6 +6,7 @@ import be.demoustiez.politicalAnalysisAPI.model.Legislature;
 import java.util.List;
 
 public interface LegislatureAccess {
-    Legislature getLegislatureByYear(Integer year);
+    Legislature getLegislatureByName(String name);
     List<Legislature> getLegislatures();
+    Legislature getLegislatureById();
 }

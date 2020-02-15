@@ -20,7 +20,7 @@ public class CommissionDTO {
         this.commissions = commissions;
     }
 
-    private class CommissionsInfo{
+    public class CommissionsInfo{
         private Integer nb_com;
 
         public Integer getNb_com() {
@@ -31,7 +31,7 @@ public class CommissionDTO {
             this.nb_com = nb_com;
         }
     }
-    private class Commission{
+    public class Commission{
         private Integer com_id;
         private String com_nom;
         private String com_nom_leg;

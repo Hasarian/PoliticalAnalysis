@@ -12,4 +12,5 @@ import java.util.List;
 public interface DeputyAccess {
     List<Deputy> getDeputies();
     List<Deputy> getDeputies(String group,String circ);
+    Deputy getDeputyById(Integer id);
 }
