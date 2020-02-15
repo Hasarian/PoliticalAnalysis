@@ -1,5 +1,6 @@
 package be.demoustiez.politicalAnalysisAPI.dataAccess.wP;
 
-public class LegislatureDAO {
-    //no parameter
+import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.LegislatureAccess;
+
+public class LegislatureDAO implements LegislatureAccess {
 }

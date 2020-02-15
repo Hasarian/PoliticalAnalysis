@@ -1,4 +1,4 @@
-package main.java.be.demoustiez.politicalAnalysisAPI.model;
+package be.demoustiez.politicalAnalysisAPI.model;
 
 import javax.swing.*;
 import java.util.GregorianCalendar;
@@ -15,12 +15,10 @@ public class Publication {
     private String fileLink;
     private Commission commission;
 
-    public void setDate(String dateDay, String hourMinute) {
+    public void setDate(String dateDay) {
         date = new GregorianCalendar();
         String[] dateElements = dateDay.split("/");
-        String[] hourElement=hourMinute.split(":");
-        date.set(Integer.parseInt(dateElements[2]),Integer.parseInt(dateElements[1]),Integer.parseInt(dateElements[0]),
-                Integer.parseInt(hourElement[1]),Integer.parseInt(hourElement[0]));
+        date.set(Integer.parseInt(dateElements[2]),Integer.parseInt(dateElements[1]),Integer.parseInt(dateElements[0]));
 
     }
     public Integer getId() {

@@ -1,5 +1,6 @@
 package be.demoustiez.politicalAnalysisAPI.dataAccess.wP;
 
-public class SessionDAO {
-    //no param
+import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.SessionAccess;
+
+public class SessionDAO implements SessionAccess {
 }

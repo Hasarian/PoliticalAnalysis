@@ -1,4 +1,5 @@
-package main.java.be.demoustiez.politicalAnalysisAPI.model;
+package be.demoustiez.politicalAnalysisAPI.model;
+
 
 
 
@@ -9,9 +10,7 @@ public class Event {
     private Integer id;
     private Commission commission;
     private String subject;
-    private Integer weekNumber;
     private GregorianCalendar date;
-
     private boolean eventPodcast;
     private List<Publication> eventPublications;
 
@@ -27,6 +26,9 @@ public class Event {
                 Integer.parseInt(hourElement[1]),Integer.parseInt(hourElement[0]));
 
     }
+    public void setDate(GregorianCalendar calendar){
+        this.date=calendar;
+    }
 
     public boolean isEventPodcast() {
         return eventPodcast;
@@ -36,13 +38,6 @@ public class Event {
         this.eventPodcast = eventPodcast;
     }
 
-    public Integer getWeekNumber() {
-        return weekNumber;
-    }
-
-    public void setWeekNumber(Integer weekNumber) {
-        this.weekNumber = weekNumber;
-    }
 
     public Integer getId() {
         return id;

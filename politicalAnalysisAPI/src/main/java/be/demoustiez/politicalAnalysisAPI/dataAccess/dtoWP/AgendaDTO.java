@@ -1,4 +1,4 @@
-package main.java.be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
+package be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
 
 public class AgendaDTO {
     private AgendaInfo agenda_infos;
@@ -20,7 +20,7 @@ public class AgendaDTO {
     }
 
 
-    private class AgendaInfo{
+    public class AgendaInfo{
         private Integer nb_event;
         private Integer nb_pub;
 
@@ -42,7 +42,7 @@ public class AgendaDTO {
             return this;
         }
     }
-    private class Event{
+    public class Event{
         private Integer event_id;
         private Integer event_id_com;
         private String event_objet;
@@ -50,7 +50,7 @@ public class AgendaDTO {
         private String event_nomjour;
         private String event_date;
         private String event_heure_minute;
-        private String event_podcast;
+        private boolean event_podcast;
         private String event_count_pub_event;
         private Publication[] event_publications;
 
@@ -70,12 +70,12 @@ public class AgendaDTO {
             this.event_count_pub_event = event_count_pub_event;
         }
 
-        public String getEvent_podcast() {
+        public boolean getEvent_podcast() {
             return event_podcast;
         }
 
         public void setEvent_podcast(String event_podcast) {
-            this.event_podcast = event_podcast;
+            this.event_podcast = event_podcast.equals("1");
         }
 
         public String getEvent_heure_minute() {
@@ -134,7 +134,7 @@ public class AgendaDTO {
             this.event_id = event_id;
         }
 
-        private class Publication{
+        public class Publication{
             private Integer pub_id;
             private String pub_type;
             private String pub_reference;

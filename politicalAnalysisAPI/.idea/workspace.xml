@@ -16,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -143,7 +144,9 @@
       <workItem from="1581515744517" duration="6412000" />
       <workItem from="1581581095426" duration="6833000" />
       <workItem from="1581600062621" duration="7393000" />
-      <workItem from="1581673097624" duration="820000" />
+      <workItem from="1581673097624" duration="925000" />
+      <workItem from="1581710232315" duration="445000" />
+      <workItem from="1581773290434" duration="6049000" />
     </task>
     <servers />
   </component>
@@ -151,10 +154,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="43" key="#Auto_Import" timestamp="1581782576698">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="43" key="#Auto_Import/0.0.1366.768@0.0.1366.768" timestamp="1581782576698" />
+    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1581783353275">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1581783353275" />
     <state x="531" y="274" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581673272239">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="531" y="274" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.768@0.0.1366.768" timestamp="1581673272239" />
+    <state x="428" y="270" width="561" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1581780844572">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="428" y="270" width="561" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.768@0.0.1366.768" timestamp="1581780844572" />
+    <state x="379" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1581777476784">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="379" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1581777476784" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
