@@ -1,14 +1,14 @@
 package be.demoustiez.politicalAnalysisAPI.model;
 
 public class Legislature {
-    private String id;
+    private Integer id;
     private String name;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

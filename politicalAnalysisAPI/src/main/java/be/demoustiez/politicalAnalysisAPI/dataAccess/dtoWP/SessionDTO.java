@@ -1,4 +1,4 @@
-package main.java.be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
+package be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
 
 public class SessionDTO {
     private Session[] sessions;
@@ -11,7 +11,7 @@ public class SessionDTO {
         this.sessions = sessions;
     }
 
-    private class Session{
+    public class Session{
         private Integer ses_id;
         private String ses_nom;
 

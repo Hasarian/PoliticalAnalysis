@@ -1,12 +1,11 @@
 package be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces;
 
-import be.demoustiez.politicalAnalysisAPI.Errors.ArgumentError;
 import be.demoustiez.politicalAnalysisAPI.model.Legislature;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface LegislatureAccess {
     Legislature getLegislatureByName(String name);
-    List<Legislature> getLegislatures();
-    Legislature getLegislatureById();
+    Collection<Legislature> getLegislatures();
+    Legislature getLegislatureById(Integer id);
 }

@@ -7,10 +7,11 @@ package be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces;
 
 import be.demoustiez.politicalAnalysisAPI.model.Deputy;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface DeputyAccess {
-    List<Deputy> getDeputies();
+    Collection<Deputy> getDeputies();
     List<Deputy> getDeputies(String group,String circ);
     Deputy getDeputyById(Integer id);
 }

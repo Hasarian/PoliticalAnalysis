@@ -146,7 +146,11 @@
       <workItem from="1581600062621" duration="7393000" />
       <workItem from="1581673097624" duration="925000" />
       <workItem from="1581710232315" duration="445000" />
-      <workItem from="1581773290434" duration="9818000" />
+      <workItem from="1581773290434" duration="10414000" />
+      <workItem from="1581855752056" duration="660000" />
+      <workItem from="1581937823132" duration="1125000" />
+      <workItem from="1581940551587" duration="2128000" />
+      <workItem from="1581947574706" duration="909000" />
     </task>
     <servers />
   </component>
@@ -158,10 +162,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="43" key="#Auto_Import/0.0.1366.768@0.0.1366.768" timestamp="1581782576698" />
-    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1581783353275">
+    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1581947631502">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1581783353275" />
+    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1581947631502" />
     <state x="531" y="274" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581673272239">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -170,10 +174,14 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="428" y="270" width="561" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.768@0.0.1366.768" timestamp="1581780844572" />
-    <state x="379" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1581777476784">
+    <state x="379" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1581947584432">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="379" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1581777476784" />
+    <state x="379" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1581947584432" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1581940895545">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1581940895545" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

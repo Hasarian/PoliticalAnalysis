@@ -174,7 +174,7 @@ public class Deputy {
         this.confPosition = confPosition;
     }
 
-    private class Address{
+    public static class Address{
         private String street;
         private String zip;
         private String local;
@@ -207,7 +207,7 @@ public class Deputy {
         }
 
     }
-    private class BureauInfo{
+    public static class BureauInfo{
         private String function;
         private Integer order;
 
