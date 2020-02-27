@@ -8,4 +8,5 @@ public interface LegislatureAccess {
     Legislature getLegislatureByName(String name);
     Collection<Legislature> getLegislatures();
     Legislature getLegislatureById(Integer id);
+    Legislature getCurrentLegislature();
 }

@@ -51,4 +51,15 @@ public class LegislatureDAO implements LegislatureAccess {
     public Legislature getLegislatureById(Integer id) {
         return this.legislaturesCache.get(id);
     }
+
+    @Override
+    public Legislature getCurrentLegislature() {
+        Iterator it = this.legislaturesCache.entrySet().iterator();
+        Pair<Integer,Legislature> currentLegislature=null;
+        while  (it.hasNext()){
+            Pair<Integer,Legislature> legislature = (Pair) it.next();
+            if(currentLegislature==null||currentLegislature.getKey()>legislature.getKey()) currentLegislature=legislature;
+        }
+        return currentLegislature.getValue();
+    }
 }

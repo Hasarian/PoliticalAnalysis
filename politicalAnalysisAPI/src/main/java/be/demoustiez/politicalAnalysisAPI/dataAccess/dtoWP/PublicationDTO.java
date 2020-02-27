@@ -1,4 +1,4 @@
-package main.java.be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
+package be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP;
 
 public class PublicationDTO {
     private PublicationsInfo publications_infos;
@@ -20,7 +20,7 @@ public class PublicationDTO {
         this.publications = publications;
     }
 
-    private class PublicationsInfo{
+    public class PublicationsInfo{
         private Integer nb_pub;
 
         public Integer getNb_pub() {
@@ -31,7 +31,7 @@ public class PublicationDTO {
             this.nb_pub = nb_pub;
         }
     }
-    private class Publication{
+    public class Publication{
         private Integer PUB_ID;
         private String PUB_TYPE;
         private String PUB_TYPECOMPLET;
