@@ -32,7 +32,7 @@ public class AgendaDAO implements AgendaAccess {
     private CommissionAccess commissionAccess;
 
     public AgendaDAO(ConfigurationLoader configuration,PublicationDAO publicationDAO,CommissionDAO commissionDAO)  {
-        this.urlBuilder= new UrlBuilder(configuration,CODE_URL);
+        this.urlBuilder= new UrlBuilder(configuration,CODE_URL,AgendaDTO.class);
         this.publicationAccess=publicationDAO;
         this.commissionAccess=commissionDAO;
     }
@@ -58,7 +58,7 @@ public class AgendaDAO implements AgendaAccess {
         return makeEventsFromDTO(dto);
 
     }
-    private List<Event> makeEventsFromDTO(AgendaDTO dto){
+    private List<Event> makeEventsFromDTO(AgendaDTO dto) throws ArgumentError{
         List<Event> events = new ArrayList<>();
         for (AgendaDTO.Event eventDTO: dto.getAgenda()) {
             Event event = new Event();
@@ -74,7 +74,7 @@ public class AgendaDAO implements AgendaAccess {
         }
         return events;
     }
-    private List<Publication> getPublications(AgendaDTO.Event.Publication[] publicationDTOs){
+    private List<Publication> getPublications(AgendaDTO.Event.Publication[] publicationDTOs) throws ArgumentError{
         List<Integer> ids = new ArrayList<>();
         for (AgendaDTO.Event.Publication pubDTOs:publicationDTOs) {
             ids.add(pubDTOs.getPub_id());

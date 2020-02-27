@@ -19,8 +19,8 @@ public class UrlBuilder<T> {
     private String jsonResponseTag="f";
     private Type type;
 
-    public UrlBuilder(ConfigurationLoader resources,String code){
-        type=new TypeToken<T>(){}.getType();;
+    public UrlBuilder(ConfigurationLoader resources,String code,Type type){
+        this.type=type;
         this.code=code;
         this.resourceLoader=resources;
     }

@@ -35,7 +35,7 @@ public class PublicationDTO {
         private Integer PUB_ID;
         private String PUB_TYPE;
         private String PUB_TYPECOMPLET;
-        private Integer PUB_NUMERO;
+        private String PUB_NUMERO;
         private String PUB_REFERENCE;
         private String PUB_DATUM;
         private Integer PUB_ID_LEG;
@@ -71,11 +71,11 @@ public class PublicationDTO {
             this.PUB_TYPECOMPLET = PUB_TYPECOMPLET;
         }
 
-        public Integer getPUB_NUMERO() {
+        public String getPUB_NUMERO() {
             return PUB_NUMERO;
         }
 
-        public void setPUB_NUMERO(Integer PUB_NUMERO) {
+        public void setPUB_NUMERO(String PUB_NUMERO) {
             this.PUB_NUMERO = PUB_NUMERO;
         }
 

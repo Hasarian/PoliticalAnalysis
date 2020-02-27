@@ -5,7 +5,8 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.UrlBuilder;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.LegislatureAccess;
 import be.demoustiez.politicalAnalysisAPI.model.Legislature;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP.LegilsatureDTO;
-import javafx.util.Pair;
+import java.util.Map.Entry;
+
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -17,7 +18,9 @@ public class LegislatureDAO implements LegislatureAccess {
     private HashMap<Integer,Legislature> legislaturesCache;
 
     public LegislatureDAO(ConfigurationLoader config){
-        this.urlBuilder=new UrlBuilder<>(config,"legislatures");
+
+        this.urlBuilder=new UrlBuilder<>(config,"legislatures",LegilsatureDTO.class);
+        loadLegislatures();
     }
 
     private void loadLegislatures(){
@@ -36,7 +39,7 @@ public class LegislatureDAO implements LegislatureAccess {
         Iterator iter = this.legislaturesCache.entrySet().iterator();
         Legislature currentLegislature=null;
         while (iter.hasNext()&&(currentLegislature!=null&&!currentLegislature.getName().equals(name))){
-            Pair<Integer,Legislature> pair = (Pair<Integer, Legislature>) iter.next();
+            Entry<Integer,Legislature> pair = (Entry<Integer, Legislature>) iter.next();
             currentLegislature= pair.getValue();
         }
         return (currentLegislature!=null&&currentLegislature.getName().equals(name))?currentLegislature:null;
@@ -55,10 +58,10 @@ public class LegislatureDAO implements LegislatureAccess {
     @Override
     public Legislature getCurrentLegislature() {
         Iterator it = this.legislaturesCache.entrySet().iterator();
-        Pair<Integer,Legislature> currentLegislature=null;
+        Entry<Integer,Legislature> currentLegislature=null;
         while  (it.hasNext()){
-            Pair<Integer,Legislature> legislature = (Pair) it.next();
-            if(currentLegislature==null||currentLegislature.getKey()>legislature.getKey()) currentLegislature=legislature;
+            Entry<Integer,Legislature> legislature = (Entry) it.next();
+            if(currentLegislature==null||currentLegislature.getKey()<legislature.getKey()) currentLegislature=legislature;
         }
         return currentLegislature.getValue();
     }

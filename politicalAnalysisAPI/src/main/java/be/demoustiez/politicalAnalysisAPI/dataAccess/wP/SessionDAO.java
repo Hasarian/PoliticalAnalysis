@@ -14,7 +14,8 @@ public class SessionDAO implements SessionAccess {
     private UrlBuilder<SessionDTO> urlBuilder;
     private HashMap<Integer,Session> sessionCache;
     public SessionDAO(ConfigurationLoader config){
-        this.urlBuilder=new UrlBuilder<>(config,"sessions");
+        this.urlBuilder=new UrlBuilder<>(config,"sessions",SessionDTO.class);
+        this.loadCache();
     }
 
     private void loadCache(){

@@ -151,7 +151,7 @@
       <workItem from="1581937823132" duration="1125000" />
       <workItem from="1581940551587" duration="2128000" />
       <workItem from="1581947574706" duration="909000" />
-      <workItem from="1582817441684" duration="5282000" />
+      <workItem from="1582817441684" duration="14216000" />
     </task>
     <servers />
   </component>
@@ -175,6 +175,42 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="428" y="270" width="561" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.768@0.0.1366.768" timestamp="1581780844572" />
+    <state width="1321" height="180" key="GridCell.Tab.0.bottom" timestamp="1582834710866">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1321" height="180" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582834710866" />
+    <state width="1321" height="180" key="GridCell.Tab.0.center" timestamp="1582834710866">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1321" height="180" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1582834710866" />
+    <state width="1321" height="180" key="GridCell.Tab.0.left" timestamp="1582834710865">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1321" height="180" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1582834710865" />
+    <state width="1321" height="180" key="GridCell.Tab.0.right" timestamp="1582834710866">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1321" height="180" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1582834710866" />
+    <state width="1321" height="221" key="GridCell.Tab.1.bottom" timestamp="1582834606246">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1321" height="221" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582834606246" />
+    <state width="1321" height="221" key="GridCell.Tab.1.center" timestamp="1582834606245">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1321" height="221" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1582834606245" />
+    <state width="1321" height="221" key="GridCell.Tab.1.left" timestamp="1582834606245">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1321" height="221" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1582834606245" />
+    <state width="1321" height="221" key="GridCell.Tab.1.right" timestamp="1582834606245">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1321" height="221" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1582834606245" />
+    <state width="691" height="392" key="XDebugger.FullValuePopup" timestamp="1582825779682">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="691" height="392" key="XDebugger.FullValuePopup/0.0.1366.768@0.0.1366.768" timestamp="1582825779682" />
     <state x="379" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1582817439832">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -185,9 +221,22 @@
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1581940895545" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/App.java</url>
+          <line>25</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="webPage" />
+        <watch expression="dto.commissions_infos" />
       </configuration>
     </watches-manager>
   </component>

@@ -37,7 +37,8 @@ public class PublicationDAO implements PublicationAccess {
         this.legislatureAccess=legDao;
         this.sessionAccess=sesDAO;
         this.commissionAccess=comDAO;
-        this.urlBuilder=new UrlBuilder<>(loader,"publications");
+        this.urlBuilder=new UrlBuilder<>(loader,"publications",PublicationDTO.class);
+        this.publicaitonCache=new HashMap<>();
     }
 
     @Override
@@ -47,13 +48,14 @@ public class PublicationDAO implements PublicationAccess {
 
     @Override
     public List<Publication> getPublicationsByIds(List<Integer> ids, Legislature legislature) throws ArgumentError {
-        this.putPublicationsInCache(this.getPublications(legislature.getId(),null,null,null,null,
-                null,null,null));
         List<Publication> publications = new ArrayList<>();
+
         for (Integer id : ids){
             if(this.publicaitonCache.containsKey(id)) publications.add(this.publicaitonCache.get(id));
+            else{
+                publications.add(this.getPublicaitonById(id,legislature));
+            }
         }
-        this.publicaitonCache=null;
         return publications;
     }
 
@@ -65,9 +67,9 @@ public class PublicationDAO implements PublicationAccess {
 
     @Override
     public Publication getPublicaitonById(Integer id, Legislature legislature) throws ArgumentError {
-        this.putPublicationsInCache(this.getPublications(legislature.getId(),null,null,null,null,
-                null,null,null));
-        return (this.publicaitonCache.containsKey(id))?this.publicaitonCache.get(id):null;
+        if(!publicaitonCache.containsKey(id)) this.getPublications(legislature.getId(),
+                null,null,null,null, null,null,null);
+        return this.publicaitonCache.get(id);
     }
 
     @Override
@@ -94,26 +96,26 @@ public class PublicationDAO implements PublicationAccess {
         PublicationDTO dto = this.urlBuilder.sendRequest(args);
         return fromDTOToPublications(dto);
     }
-    private Publication getPublicationFromCache(Integer id){
-        return (this.publicaitonCache==null) ? null:this.publicaitonCache.get(id);
-    }
     private List<Publication> fromDTOToPublications(PublicationDTO dto){
         List<Publication> publications = new ArrayList<>();
         for (PublicationDTO.Publication pubDTO:dto.getPublications()) {
-            Publication publication=new Publication();
+            if(!this.publicaitonCache.containsKey(pubDTO.getPUB_ID())) {
+                Publication publication = new Publication();
 
-            publication.setType(pubDTO.getPUB_TYPE());
-            publication.setTitle(pubDTO.getPUB_TITRE());
-            publication.setSession(this.sessionAccess.sessionById(pubDTO.getPUB_ID_SES()));
-            publication.setReference(pubDTO.getPUB_REFERENCE());
-            publication.setLegislation(this.legislatureAccess.getLegislatureById(pubDTO.getPUB_ID_LEG()));
-            publication.setId(pubDTO.getPUB_ID());
-            publication.setFileName(pubDTO.getPUB_FICHIER());
-            publication.setFileLink(pubDTO.getPUB_LIEN());
-            publication.setCommission(commissionAccess.getCommission(pubDTO.getAG_ID_COM()));
-            publication.setDate(pubDTO.getPUB_DATUM());
+                publication.setType(pubDTO.getPUB_TYPE());
+                publication.setTitle(pubDTO.getPUB_TITRE());
+                publication.setSession(this.sessionAccess.sessionById(pubDTO.getPUB_ID_SES()));
+                publication.setReference(pubDTO.getPUB_REFERENCE());
+                publication.setLegislation(this.legislatureAccess.getLegislatureById(pubDTO.getPUB_ID_LEG()));
+                publication.setId(pubDTO.getPUB_ID());
+                publication.setFileName(pubDTO.getPUB_FICHIER());
+                publication.setFileLink(pubDTO.getPUB_LIEN());
+                publication.setCommission(commissionAccess.getCommission(pubDTO.getAG_ID_COM()));
+                publication.setDate(pubDTO.getPUB_DATUM());
 
-            publications.add(publication);
+                publications.add(publication);
+                this.publicaitonCache.put(publication.getId(), publication);
+            }
         }
         return publications;
     }

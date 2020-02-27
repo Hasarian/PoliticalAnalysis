@@ -19,7 +19,7 @@ public class DeputeesDAO implements DeputyAccess {
     private static final String CIRC_TAG="circ";
 
     public DeputeesDAO(ConfigurationLoader config){
-        this.urlBuilder=new UrlBuilder<>(config,"deputees");
+        this.urlBuilder=new UrlBuilder<>(config,"deputees",DeputyDTO.class);
         loadDeputies();
     }
     private void loadDeputies(){

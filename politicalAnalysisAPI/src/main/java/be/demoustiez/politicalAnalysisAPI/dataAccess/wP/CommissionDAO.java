@@ -28,36 +28,61 @@ public class CommissionDAO implements CommissionAccess {
 
     public CommissionDAO(ConfigurationLoader configurationLoader,
                          LegislatureDAO legislatureAccess,DeputeesDAO deputyAccess){
-        this.urlBuilderCommission=new UrlBuilder<>(configurationLoader,"commissions");
-        this.urlBuilderComposition=new UrlBuilder<>(configurationLoader,"composition");
+        this.urlBuilderCommission=new UrlBuilder<>(configurationLoader,"commissions",CommissionDTO.class);
+        this.urlBuilderComposition=new UrlBuilder<>(configurationLoader,"composition",CompositionDTO.class);
         this.legislatureAccess=legislatureAccess;
         this.deputyAccess=deputyAccess;
-        loadCommissions();
+        this.commissions=new HashMap<>();
     }
 
     @Override
     public Commission getCommission(Integer commissionId){
-        if(this.commissions==null||this.commissions.size()==0) loadCommissions();
-        return commissions.get(commissionId);
+        Commission com;
+       if(this.commissions.containsKey(commissionId)) com= this.commissions.get(commissionId);
+       else{
+           com= getCommissionFromURL(commissionId);
+           this.commissions.put(commissionId,com);
+       }
+        return com;
     }
     private void loadCommissions(){
         CommissionDTO dto = this.urlBuilderCommission.sendRequest(new HashMap<>());
         this.commissions=new HashMap<>();
         for (CommissionDTO.Commission commissionDTO:dto.getCommissions()) {
-            Commission commission= new Commission();
-            commission.setId(commissionDTO.getCom_id());
-            commission.setLegislationName(legislatureAccess.getLegislatureByName(commissionDTO.getCom_nom_leg()));
-            commission.setName(commissionDTO.getCom_nom_leg());
-            commission.setType(commissionDTO.getCom_type());
-            loadComposition(commission);
-            this.commissions.put(commission.getId(),commission);
-
+            if(!this.commissions.containsKey(commissionDTO.getCom_id())) {
+                Commission commission = fromDTOToCommission(commissionDTO);
+                this.commissions.put(commission.getId(), commission);
+            }
         }
+    }
+    public Commission fromDTOToCommission(CommissionDTO.Commission dto){
+        Commission commission= new Commission();
+        commission.setId(dto.getCom_id());
+        commission.setLegislationName(legislatureAccess.getLegislatureByName(dto.getCom_nom_leg()));
+        commission.setName(dto.getCom_nom_leg());
+        commission.setType(dto.getCom_type());
+        loadComposition(commission);
+        return commission;
     }
     @Override
     public Collection<Commission> getCommissions() {
-        if(this.commissions==null||this.commissions.size()==0) loadCommissions();
+        loadCommissions();
         return this.commissions.values();
+    }
+    private Commission getCommissionFromURL(Integer commissionId){
+        if(commissionId==null) return null;
+        CommissionDTO dto = this.urlBuilderCommission.sendRequest(new HashMap<>());
+        int i=0;
+        CommissionDTO.Commission commission=dto.getCommissions()[i];
+        int currentId=commission.getCom_id();
+        while(i<dto.getCommissions_infos().getNb_com()&&currentId!=commissionId){
+            i++;
+            if(i<dto.getCommissions_infos().getNb_com()) {
+                commission = dto.getCommissions()[i];
+                currentId = commission.getCom_id();
+            }
+        }
+        return (currentId==commissionId)?fromDTOToCommission(commission):null;
     }
     private void loadComposition(Commission commission){
         HashMap<String,String> args= new HashMap<>();
