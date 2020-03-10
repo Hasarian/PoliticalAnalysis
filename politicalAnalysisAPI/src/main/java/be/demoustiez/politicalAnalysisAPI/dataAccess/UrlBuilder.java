@@ -2,7 +2,6 @@ package be.demoustiez.politicalAnalysisAPI.dataAccess;
 
 import be.demoustiez.politicalAnalysisAPI.configuration.ConfigurationLoader;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
 import java.lang.reflect.Type;
