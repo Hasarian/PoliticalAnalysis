@@ -10,11 +10,14 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.SessionAccess
 import be.demoustiez.politicalAnalysisAPI.model.Legislature;
 import be.demoustiez.politicalAnalysisAPI.model.Publication;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP.PublicationDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@Service
 public class PublicationDAO implements PublicationAccess {
 
     private static final String IDLEG_TAG="idleg";
@@ -33,6 +36,7 @@ public class PublicationDAO implements PublicationAccess {
     private CommissionAccess commissionAccess;
     private UrlBuilder<PublicationDTO> urlBuilder;
 
+    @Autowired
     public PublicationDAO(ConfigurationLoader loader,LegislatureDAO legDao,SessionDAO sesDAO,CommissionDAO comDAO){
         this.legislatureAccess=legDao;
         this.sessionAccess=sesDAO;

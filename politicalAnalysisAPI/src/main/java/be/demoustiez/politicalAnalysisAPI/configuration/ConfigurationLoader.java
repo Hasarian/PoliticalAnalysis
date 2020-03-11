@@ -4,6 +4,7 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.StAXEventBuilder;
+import org.springframework.stereotype.Service;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -15,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.function.Consumer;
 
+@Service
 public class ConfigurationLoader {
     private static final String publicationTypeFile="publicationTypes.xml";
     private static final String circonscriptionsFile="circonscriptions.xml";
@@ -24,6 +26,7 @@ public class ConfigurationLoader {
     private HashMap<String,String> publicationTypes=new HashMap<>();
     private List<String> circonsciptions= new ArrayList<>();
     private HashMap<String,String> urls = new HashMap<>();
+
 
     public ConfigurationLoader(){
         loadResource(circonscriptionsFile,"circonscription",this::addCircToList);

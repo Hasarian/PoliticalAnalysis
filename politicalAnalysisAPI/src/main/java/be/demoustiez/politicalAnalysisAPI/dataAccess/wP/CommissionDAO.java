@@ -9,12 +9,15 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.DeputyAccess;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.LegislatureAccess;
 import be.demoustiez.politicalAnalysisAPI.model.Commission;
 import be.demoustiez.politicalAnalysisAPI.model.Deputy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
+@Service
 public class CommissionDAO implements CommissionAccess {
 
     private UrlBuilder<CommissionDTO> urlBuilderCommission;
@@ -25,7 +28,7 @@ public class CommissionDAO implements CommissionAccess {
 
     private static final String COMMISSION_TAG="id";
 
-
+    @Autowired
     public CommissionDAO(ConfigurationLoader configurationLoader,
                          LegislatureDAO legislatureAccess,DeputeesDAO deputyAccess){
         this.urlBuilderCommission=new UrlBuilder<>(configurationLoader,"commissions",CommissionDTO.class);

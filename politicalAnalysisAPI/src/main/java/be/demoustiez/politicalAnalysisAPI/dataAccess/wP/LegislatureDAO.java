@@ -5,6 +5,9 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.UrlBuilder;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.LegislatureAccess;
 import be.demoustiez.politicalAnalysisAPI.model.Legislature;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP.LegilsatureDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.Map.Entry;
 
 
@@ -12,6 +15,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
+@Service
 public class LegislatureDAO implements LegislatureAccess {
 
     private UrlBuilder<LegilsatureDTO> urlBuilder;
@@ -23,6 +27,7 @@ public class LegislatureDAO implements LegislatureAccess {
         loadLegislatures();
     }
 
+    @Autowired
     private void loadLegislatures(){
         LegilsatureDTO dto = this.urlBuilder.sendRequest(new HashMap<>());
         this.legislaturesCache=new HashMap<>();

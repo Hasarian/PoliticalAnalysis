@@ -8,9 +8,12 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.AgendaAccess;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.CommissionAccess;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.PublicationAccess;
 import be.demoustiez.politicalAnalysisAPI.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Service
 public class AgendaDAO implements AgendaAccess {
     private static final String CODE_URL="agenda";
 
@@ -31,6 +34,7 @@ public class AgendaDAO implements AgendaAccess {
     private PublicationAccess publicationAccess;
     private CommissionAccess commissionAccess;
 
+    @Autowired
     public AgendaDAO(ConfigurationLoader configuration,PublicationDAO publicationDAO,CommissionDAO commissionDAO)  {
         this.urlBuilder= new UrlBuilder(configuration,CODE_URL,AgendaDTO.class);
         this.publicationAccess=publicationDAO;

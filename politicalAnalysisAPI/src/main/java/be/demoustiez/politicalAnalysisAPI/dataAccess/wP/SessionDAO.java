@@ -5,14 +5,19 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.UrlBuilder;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP.SessionDTO;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.SessionAccess;
 import be.demoustiez.politicalAnalysisAPI.model.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.HashMap;
 
+@Service
 public class SessionDAO implements SessionAccess {
 
     private UrlBuilder<SessionDTO> urlBuilder;
     private HashMap<Integer,Session> sessionCache;
+
+    @Autowired
     public SessionDAO(ConfigurationLoader config){
         this.urlBuilder=new UrlBuilder<>(config,"sessions",SessionDTO.class);
         this.loadCache();

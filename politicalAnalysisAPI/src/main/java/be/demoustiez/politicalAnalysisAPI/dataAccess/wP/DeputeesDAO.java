@@ -5,12 +5,15 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.UrlBuilder;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP.DeputyDTO;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.DeputyAccess;
 import be.demoustiez.politicalAnalysisAPI.model.Deputy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
+@Service
 public class DeputeesDAO implements DeputyAccess {
 
     private UrlBuilder<DeputyDTO> urlBuilder;
@@ -18,6 +21,7 @@ public class DeputeesDAO implements DeputyAccess {
     private static final String GROUP_TAG="pa";
     private static final String CIRC_TAG="circ";
 
+    @Autowired
     public DeputeesDAO(ConfigurationLoader config){
         this.urlBuilder=new UrlBuilder<>(config,"deputees",DeputyDTO.class);
         loadDeputies();
