@@ -6,12 +6,14 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.DeputyAccess;
 import be.demoustiez.politicalAnalysisAPI.model.Deputy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 @RestController
+@RequestMapping("/deputees")
 public class DeputyController {
     private DeputyAccess deputyAccess;
 
@@ -20,7 +22,7 @@ public class DeputyController {
         this.deputyAccess=dao;
     }
 
-    @GetMapping("/deputees")
+    @GetMapping("/all")
     public Collection<DeputyDTO> getDeputees(){
         Collection<Deputy> deputees=this.deputyAccess.getDeputies();
         ArrayList<DeputyDTO> dto=new ArrayList<>();

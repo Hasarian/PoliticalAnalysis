@@ -5,7 +5,7 @@ import java.util.List;
 public class Commission {
     private Integer id;
     private String name;
-    private Legislature legislationName;
+    private Legislature legislation;
     private String type;
     private List<Deputy> compositionEffective;
     private Deputy president;
@@ -28,12 +28,12 @@ public class Commission {
         this.name = name;
     }
 
-    public Legislature getLegislationName() {
-        return legislationName;
+    public Legislature getLegislation() {
+        return legislation;
     }
 
-    public void setLegislationName(Legislature legislationName) {
-        this.legislationName = legislationName;
+    public void setLegislation(Legislature legislationName) {
+        this.legislation = legislationName;
     }
 
     public String getType() {
