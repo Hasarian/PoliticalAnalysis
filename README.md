@@ -3,3 +3,12 @@ Projet personnel visant à créer un site de traitement des informations publiqu
 
 ## code
 partie API REST, faite sous Spring
+
+## appels possibles
+
+### Deputés [not implemented]
+
+* tous les députés 
+* un député selon son id
+* les députés membres d'un groupe
+* tous les députés triés par groupe
