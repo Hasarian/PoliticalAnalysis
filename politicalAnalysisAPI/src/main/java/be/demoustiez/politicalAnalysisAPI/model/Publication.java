@@ -1,6 +1,5 @@
 package be.demoustiez.politicalAnalysisAPI.model;
 
-import javax.swing.*;
 import java.util.GregorianCalendar;
 
 public class Publication {
@@ -79,7 +78,11 @@ public class Publication {
     }
 
     public void setLegislation(Legislature legislation) {
+        if(this.legislation!=null){
+            this.legislation.removePublication(this);
+        }
         this.legislation = legislation;
+        this.legislation.addPublication(this);
     }
 
     public Session getSession() {

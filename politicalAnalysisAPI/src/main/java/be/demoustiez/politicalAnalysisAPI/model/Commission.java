@@ -33,7 +33,11 @@ public class Commission {
     }
 
     public void setLegislation(Legislature legislationName) {
+        if(this.legislation==null){
+            this.legislation.removeCommission(this);
+        }
         this.legislation = legislationName;
+        this.legislation.addCommission(this);
     }
 
     public String getType() {

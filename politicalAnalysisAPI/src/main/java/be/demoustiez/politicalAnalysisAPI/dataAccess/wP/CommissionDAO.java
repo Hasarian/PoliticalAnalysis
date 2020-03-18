@@ -61,7 +61,7 @@ public class CommissionDAO implements CommissionAccess {
     public Commission fromDTOToCommission(CommissionDTO.Commission dto){
         Commission commission= new Commission();
         commission.setId(dto.getCom_id());
-        commission.setLegislationName(legislatureAccess.getLegislatureByName(dto.getCom_nom_leg()));
+        commission.setLegislation(legislatureAccess.getLegislatureByName(dto.getCom_nom_leg()));
         commission.setName(dto.getCom_nom_leg());
         commission.setType(dto.getCom_type());
         loadComposition(commission);
