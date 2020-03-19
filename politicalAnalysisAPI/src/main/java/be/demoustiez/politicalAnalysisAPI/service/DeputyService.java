@@ -37,12 +37,13 @@ public class DeputyService implements IDeputyService{
     @Override
     public List<Deputy> getDeputeesByGroup(String groupName) throws ResourceNotFound {
         Collection<Deputy> deputies = this.access.getDeputies();
-        Collection<Deputy> groupDeputies = deputies.stream().filter(deputy -> deputy.getGroup().equals(groupName)).collect(Collectors.toList());
-        return null;
+        List<Deputy> groupDeputies = deputies.stream().filter(deputy -> deputy.getGroup().equals(groupName)).collect(Collectors.toList());
+        if(groupDeputies.size()==0) throw new ResourceNotFound("group name");
+        return groupDeputies;
     }
 
     @Override
-    public HashMap<String, List<Deputy>> getDeputeesOrderedByGroup() throws ResourceNotFound {
+    public HashMap<String, List<Deputy>> getDeputeesOrderedByGroup(){
         return null;
     }
 

@@ -21,13 +21,13 @@ public class LegislatureDAO implements LegislatureAccess {
     private UrlBuilder<LegilsatureDTO> urlBuilder;
     private HashMap<Integer,Legislature> legislaturesCache;
 
+    @Autowired
     public LegislatureDAO(ConfigurationLoader config){
 
         this.urlBuilder=new UrlBuilder<>(config,"legislatures",LegilsatureDTO.class);
         loadLegislatures();
     }
 
-    @Autowired
     private void loadLegislatures(){
         LegilsatureDTO dto = this.urlBuilder.sendRequest(new HashMap<>());
         this.legislaturesCache=new HashMap<>();
