@@ -12,3 +12,4 @@ partie API REST, faite sous Spring
 * un député selon son id
 * les députés membres d'un groupe
 * tous les députés triés par groupe
+* recherche selon le nom
