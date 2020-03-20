@@ -6,10 +6,12 @@ partie API REST, faite sous Spring
 
 ## appels possibles
 
-### Deputés [not implemented]
+### Deputés (/deputies)
 
-* tous les députés 
-* un député selon son id
-* les députés membres d'un groupe
-* tous les députés triés par groupe
-* recherche selon le nom
+[détails](https://github.com/Hasarian/PoliticalAnalysis/wiki/Deputy-controller)
+
+* tous les députés (/all)
+* un député selon son id (/{id})
+* les députés membres d'un groupe (/group/{name})
+* tous les députés triés par groupe (/groupsComposition)
+* recherche selon le nom (/search?[lastNameTerm][&firstNameTerm])
