@@ -10,7 +10,7 @@ import java.util.List;
 public interface IDeputyService {
     Collection<Deputy> getDeputees();
     Deputy getDeputyById(Integer id) throws ResourceNotFound;
-    Collection<Deputy> getDeputeesByGroup(String groupName) throws ResourceNotFound;
+    Collection<Deputy> getDeputiesByGroup(String groupName) throws ResourceNotFound;
     HashMap<String,List<Deputy>> getDeputeesOrderedByGroup();
     Collection<Deputy> searchDeputyByName(String lastNameSearchTerm,String firstNameSearchTerm);
 }
