@@ -95,7 +95,7 @@
       <file leaf-file-name="DeputyController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/DeputyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
+            <state relative-caret-position="143">
               <caret line="50" column="75" lean-forward="false" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -665,7 +665,7 @@
       <workItem from="1584374401985" duration="1188000" />
       <workItem from="1584531364973" duration="5657000" />
       <workItem from="1584608471193" duration="8441000" />
-      <workItem from="1584695407572" duration="15910000" />
+      <workItem from="1584695407572" duration="16427000" />
     </task>
     <servers />
   </component>
@@ -702,7 +702,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38272000" />
+    <option name="totallyTimeSpent" value="38789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1554" height="916" extended-state="6" />
@@ -1309,7 +1309,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/DeputyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
+        <state relative-caret-position="143">
           <caret line="50" column="75" lean-forward="false" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
