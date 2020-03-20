@@ -49,18 +49,18 @@
       <file leaf-file-name="DeputyService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/service/DeputyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="956">
-              <caret line="72" column="54" lean-forward="true" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
+            <state relative-caret-position="310">
+              <caret line="43" column="12" lean-forward="false" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#847#848#0" expanded="true" />
                 <element signature="e#878#879#0" expanded="true" />
                 <element signature="e#939#940#0" expanded="true" />
                 <element signature="e#987#988#0" expanded="true" />
-                <element signature="e#2947#2948#0" expanded="true" />
-                <element signature="e#2996#2997#0" expanded="true" />
+                <element signature="e#3004#3005#0" expanded="true" />
                 <element signature="e#3053#3054#0" expanded="true" />
-                <element signature="e#3096#3097#0" expanded="true" />
+                <element signature="e#3110#3111#0" expanded="true" />
+                <element signature="e#3153#3154#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeputyController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DeputyController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/DeputyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="245">
+              <caret line="50" column="75" lean-forward="false" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#835#836#0" expanded="true" />
@@ -106,15 +106,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExceptionHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExceptionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/ExceptionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+            <state relative-caret-position="272">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#547#548#0" expanded="true" />
                 <element signature="e#599#600#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
                 <element signature="e#772#773#0" expanded="true" />
                 <element signature="e#810#811#0" expanded="true" />
                 <element signature="e#848#849#0" expanded="true" />
@@ -234,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/dataAccess/wP/LegislatureDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/service/interfaces/IDeputyService.java" />
         <option value="$PROJECT_DIR$/src/main/test/java/be/demoustiez/politicalAnalysisAPI/DeputyTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/service/DeputyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/model/Deputy.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/dto/DeputyDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/dto/DeputyFullDTO.java" />
@@ -243,6 +243,7 @@
         <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/Errors/ResourceNotFound.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/DeputyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/ExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/service/DeputyService.java" />
       </list>
     </option>
   </component>
@@ -664,7 +665,7 @@
       <workItem from="1584374401985" duration="1188000" />
       <workItem from="1584531364973" duration="5657000" />
       <workItem from="1584608471193" duration="8441000" />
-      <workItem from="1584695407572" duration="14638000" />
+      <workItem from="1584695407572" duration="15910000" />
     </task>
     <servers />
   </component>
@@ -701,7 +702,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37000000" />
+    <option name="totallyTimeSpent" value="38272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1554" height="916" extended-state="6" />
@@ -1272,47 +1273,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/ExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/service/DeputyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="956">
-          <caret line="72" column="54" lean-forward="true" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
+        <state relative-caret-position="310">
+          <caret line="43" column="12" lean-forward="false" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#847#848#0" expanded="true" />
             <element signature="e#878#879#0" expanded="true" />
             <element signature="e#939#940#0" expanded="true" />
             <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#2947#2948#0" expanded="true" />
-            <element signature="e#2996#2997#0" expanded="true" />
+            <element signature="e#3004#3005#0" expanded="true" />
             <element signature="e#3053#3054#0" expanded="true" />
-            <element signature="e#3096#3097#0" expanded="true" />
+            <element signature="e#3110#3111#0" expanded="true" />
+            <element signature="e#3153#3154#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/DeputyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        <state relative-caret-position="245">
+          <caret line="50" column="75" lean-forward="false" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#835#836#0" expanded="true" />
             <element signature="e#876#877#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/demoustiez/politicalAnalysisAPI/controller/ExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
           </folding>
         </state>
       </provider>
