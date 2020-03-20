@@ -93,27 +93,27 @@ public class DeputyTest {
     @Test
     public void getDeputies_AllDeputies(){
         long deputiesNumber = this.mockDeputies.size();
-        Collection<Deputy> deputies = this.deputyService.getDeputees();
+        Collection<Deputy> deputies = this.deputyService.getDeputies();
         Assert.assertEquals(deputiesNumber,deputies.size());
     }
     @Test
     public void getDeputies_ListSize0(){
         Mockito.reset(deputyAccess);
         Mockito.when(this.deputyAccess.getDeputies()).thenReturn(new ArrayList<>());
-        Collection<Deputy> deputies = this.deputyService.getDeputees();
+        Collection<Deputy> deputies = this.deputyService.getDeputies();
         Assert.assertEquals(deputies.size(),0);
     }
 
     //ordered by group
     @Test
     public void getDeputeesOrderedByGroup_correctNumberOfGroups(){
-        HashMap<String,List<Deputy>> groups= this.deputyService.getDeputeesOrderedByGroup();
+        HashMap<String,List<Deputy>> groups= this.deputyService.getDeputiesOrderedByGroup();
         Assert.assertEquals(groups.size(),2);
     }
 
     @Test
     public void getDeputeesOrderedByGroup_GroupCorrectSize(){
-        HashMap<String,List<Deputy>> groups= this.deputyService.getDeputeesOrderedByGroup();
+        HashMap<String,List<Deputy>> groups= this.deputyService.getDeputiesOrderedByGroup();
         groups.forEach((groupName,deputies)->{
             Assert.assertEquals(deputies.size(),
                     this.mockDeputies.values().stream().filter((deputy)->deputy.getGroup().equals(groupName)).count());
@@ -130,7 +130,7 @@ public class DeputyTest {
     public void searchDeputiesByName_nonCaseSensitiveLastName(){
         Collection<Deputy> deputiesUpper = this.deputyService.searchDeputyByName("A",null);
         Collection<Deputy> deputiesLower = this.deputyService.searchDeputyByName("a",null);
-        Assert.assertEquals(deputiesLower.stream(),deputiesUpper.size());
+        Assert.assertEquals(deputiesLower.size(),deputiesUpper.size());
         deputiesLower.forEach((deputyLower ->
             Assert.assertTrue(deputiesUpper.stream().anyMatch(deputyUpper->deputyUpper.getId().equals(deputyLower.getId())))
                 ));
@@ -142,7 +142,7 @@ public class DeputyTest {
     public void searchDeputiesByName_nonCasSensitiveFirstName(){
         Collection<Deputy> deputiesUpper = this.deputyService.searchDeputyByName(null,"A");
         Collection<Deputy> deputiesLower = this.deputyService.searchDeputyByName(null,"a");
-        Assert.assertEquals(deputiesLower.stream(),deputiesUpper.size());
+        Assert.assertEquals(deputiesLower.size(),deputiesUpper.size());
         deputiesLower.forEach((deputyLower ->
                 Assert.assertTrue(deputiesUpper.stream().anyMatch(deputyUpper->deputyUpper.getId().equals(deputyLower.getId())))
         ));

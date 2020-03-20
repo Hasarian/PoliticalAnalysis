@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 
 public interface IDeputyService {
-    Collection<Deputy> getDeputees();
+    Collection<Deputy> getDeputies();
     Deputy getDeputyById(Integer id) throws ResourceNotFound;
     Collection<Deputy> getDeputiesByGroup(String groupName) throws ResourceNotFound;
-    HashMap<String,List<Deputy>> getDeputeesOrderedByGroup();
+    HashMap<String,List<Deputy>> getDeputiesOrderedByGroup();
     Collection<Deputy> searchDeputyByName(String lastNameSearchTerm,String firstNameSearchTerm);
 }
