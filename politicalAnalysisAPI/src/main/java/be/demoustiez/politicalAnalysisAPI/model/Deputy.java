@@ -173,7 +173,9 @@ public class Deputy {
     public void setConfPosition(BureauInfo confPosition) {
         this.confPosition = confPosition;
     }
-
+    public String getAdressString(){
+        return this.province+" > "+this.address.toString();
+    }
     public static class Address{
         private String street;
         private String zip;
@@ -205,7 +207,10 @@ public class Deputy {
             this.local = local;
             return this;
         }
-
+        @Override
+        public String toString(){
+            return this.local + " ("+this.zip+")";
+        }
     }
     public static class BureauInfo{
         private String function;

@@ -2,36 +2,26 @@ package be.demoustiez.politicalAnalysisAPI.controller;
 
 import be.demoustiez.politicalAnalysisAPI.controller.dto.DeputyDTO;
 import be.demoustiez.politicalAnalysisAPI.controller.dto.DeputyFullDTO;
-import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.DeputeesDAO;
-import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.DeputyAccess;
 import be.demoustiez.politicalAnalysisAPI.model.Deputy;
+import be.demoustiez.politicalAnalysisAPI.service.DeputyService;
+import be.demoustiez.politicalAnalysisAPI.service.interfaces.IDeputyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
-/*
-*
-*
-    tous les députés
-    un député selon son id
-    les députés membres d'un groupe
-    tous les députés triés par groupe
-
-*   recherche selon le nom
-* */
 @RestController
-@RequestMapping("/deputees")
+@RequestMapping("/deputies")
 public class DeputyController {
-    private DeputyAccess deputyAccess;
+    private IDeputyService deputyAccess;
 
     @Autowired
-    public DeputyController(DeputeesDAO dao){
-        this.deputyAccess=dao;
+    public DeputyController(DeputyService service){
+        this.deputyAccess=service;
     }
 
     @GetMapping("/all")
@@ -45,6 +35,33 @@ public class DeputyController {
     @GetMapping("/{id}")
     public DeputyFullDTO getDeputy(@PathVariable Integer id){
         Deputy deputy = this.deputyAccess.getDeputyById(id);
-        return null;
+        return new DeputyFullDTO(deputy);
+    }
+    /*
+    * les députés membres d'un groupe*/
+    @GetMapping("/group/{name}")
+    public Collection<DeputyFullDTO> getDeputiesFromGroup(@PathVariable String name){
+         Collection<Deputy> deputies=this.deputyAccess.getDeputiesByGroup(name);
+         return deputies.stream().map(DeputyFullDTO::new).collect(Collectors.toList());
+    }
+
+/*tous les députés triés par groupe*/
+    @GetMapping("/groupsComposition")
+    public HashMap<String,List<DeputyDTO>> getDeputiesOrderedBuGroup(){
+        HashMap<String,List<Deputy>> orderedDeputies=this.deputyAccess.getDeputiesOrderedByGroup();
+        HashMap<String,List<DeputyDTO>> dto=new HashMap<>();
+        orderedDeputies.forEach((groupName,deputies)->dto.put(groupName,this.generateDeputyDTOListFromModelList(deputies)));
+        return dto;
+    }
+    private List<DeputyDTO> generateDeputyDTOListFromModelList(List<Deputy> models){
+        return models.stream().map(DeputyDTO::new).collect(Collectors.toList());
+    }
+/*recherche selon le nom
+    * */
+    @GetMapping("/search")
+    public Collection<DeputyDTO> searchDeputies(@RequestParam(required = false) String lastNameTerm,
+                                                @RequestParam(required = false) String firstNameTerm){
+        return this.deputyAccess.searchDeputyByName(lastNameTerm,firstNameTerm).stream().map(DeputyDTO::new)
+                .collect(Collectors.toList());
     }
 }
