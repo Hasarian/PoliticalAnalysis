@@ -15,3 +15,11 @@ partie API REST, faite sous Spring
 * les députés membres d'un groupe (/group/{name})
 * tous les députés triés par groupe (/groupsComposition)
 * recherche selon le nom (/search?[lastNameTerm][&firstNameTerm])
+
+### Commissions [non implémenté]
+
+* liste des commissions - législation en cours
+* lite des commissions - choix législation
+* composition d'une commission
+* calendrier d'une commission - pagination
+* publications liées à une commission (considéré - pagination)
