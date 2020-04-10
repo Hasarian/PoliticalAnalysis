@@ -32,11 +32,11 @@ public class Commission {
         return legislation;
     }
 
-    public void setLegislation(Legislature legislationName) {
+    public void setLegislation(Legislature legislation) {
         if(this.legislation==null){
             this.legislation.removeCommission(this);
         }
-        this.legislation = legislationName;
+        this.legislation = legislation;
         this.legislation.addCommission(this);
     }
 

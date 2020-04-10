@@ -14,4 +14,5 @@ import java.util.Collection;
 
 public interface ICommissionService {
     Collection<Commission> getCommissions(Legislature legislature);
+    Commission getCommissionById(Integer id);
 }

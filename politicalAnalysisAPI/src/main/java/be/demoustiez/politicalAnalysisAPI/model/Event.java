@@ -3,31 +3,29 @@ package be.demoustiez.politicalAnalysisAPI.model;
 
 
 
-import java.util.GregorianCalendar;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class Event {
     private Integer id;
     private Commission commission;
     private String subject;
-    private GregorianCalendar date;
+    private Date date;
     private boolean eventPodcast;
     private List<Publication> eventPublications;
 
-    public GregorianCalendar getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String dateDay, String hourMinute) {
-        date = new GregorianCalendar();
-        String[] dateElements = dateDay.split("/");
-        String[] hourElement=hourMinute.split(":");
-        date.set(Integer.parseInt(dateElements[2]),Integer.parseInt(dateElements[1]),Integer.parseInt(dateElements[0]),
-                Integer.parseInt(hourElement[1]),Integer.parseInt(hourElement[0]));
-
+    public void setDate(String dateDay, String hourMinute) throws ParseException{
+        String dateString = dateDay.concat("/"+hourMinute);
+        this.setDate(new SimpleDateFormat("dd/MM/yyyy/HH:mm").parse(dateString));
     }
-    public void setDate(GregorianCalendar calendar){
-        this.date=calendar;
+    public void setDate(Date localDate){
+        this.date=localDate;
     }
 
     public boolean isEventPodcast() {

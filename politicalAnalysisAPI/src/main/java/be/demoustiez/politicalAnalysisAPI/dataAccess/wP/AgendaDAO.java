@@ -1,6 +1,7 @@
 package be.demoustiez.politicalAnalysisAPI.dataAccess.wP;
 
 import be.demoustiez.politicalAnalysisAPI.Errors.ArgumentError;
+import be.demoustiez.politicalAnalysisAPI.Errors.InvalidParameter;
 import be.demoustiez.politicalAnalysisAPI.configuration.ConfigurationLoader;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.UrlBuilder;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.dtoWP.AgendaDTO;
@@ -11,6 +12,7 @@ import be.demoustiez.politicalAnalysisAPI.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.*;
 
 @Service
@@ -41,11 +43,11 @@ public class AgendaDAO implements AgendaAccess {
         this.commissionAccess=commissionDAO;
     }
 
-    public List<Event> getEvents(String legislation) throws ArgumentError{
+    public List<Event> getEvents(String legislation) throws ArgumentError,InvalidParameter{
         return this.getEvents(legislation,null,null,null,null,null,null,null);
     }
     public List<Event> getEvents(String legilsation,String session,String year, String month,String typeCode, String event,
-                                 String date,String commission)throws ArgumentError{
+                                 String date,String commission)throws ArgumentError,InvalidParameter{
         HashMap<String,String> args=new HashMap<>();
         args.put(CAL_TAG,CAL_VALUE);
         if(legilsation==null) throw new ArgumentError("legislation id","is mandatory");
@@ -59,10 +61,14 @@ public class AgendaDAO implements AgendaAccess {
         if(!(commission==null||commission.isEmpty())) args.put(COMMISSION_TAG,commission);
 
         AgendaDTO dto = this.urlBuilder.sendRequest(args);
-        return makeEventsFromDTO(dto);
+        try {
+            return makeEventsFromDTO(dto);
+        }catch (ParseException parseE){
+            throw new InvalidParameter("day should be dd/MM/yyyy and hour should be HH:mm. Both are required.");
+        }
 
     }
-    private List<Event> makeEventsFromDTO(AgendaDTO dto) throws ArgumentError{
+    private List<Event> makeEventsFromDTO(AgendaDTO dto) throws ArgumentError,ParseException{
         List<Event> events = new ArrayList<>();
         for (AgendaDTO.Event eventDTO: dto.getAgenda()) {
             Event event = new Event();

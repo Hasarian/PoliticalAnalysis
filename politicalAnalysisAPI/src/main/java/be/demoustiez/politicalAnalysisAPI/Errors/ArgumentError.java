@@ -1,6 +1,6 @@
 package be.demoustiez.politicalAnalysisAPI.Errors;
 
-public class ArgumentError extends Exception {
+public class ArgumentError extends RuntimeException {
     String message;
 
     public ArgumentError(String argument,String reason){

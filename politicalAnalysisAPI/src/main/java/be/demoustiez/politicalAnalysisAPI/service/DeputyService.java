@@ -5,6 +5,7 @@ import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.DeputeesDAO;
 import be.demoustiez.politicalAnalysisAPI.dataAccess.wP.interfaces.DeputyAccess;
 import be.demoustiez.politicalAnalysisAPI.model.Deputy;
 import be.demoustiez.politicalAnalysisAPI.service.interfaces.IDeputyService;
+import be.demoustiez.politicalAnalysisAPI.util.Filter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,27 +63,12 @@ public class DeputyService implements IDeputyService{
     @Override
     public List<Deputy> searchDeputyByName(String lastNameSearchTerm, String firstNameSearchTerm) {
         Collection<Deputy> deputies = this.access.getDeputies();
-        NameFilter filter = new NameFilter();
+        Filter filter = new Filter();
         if(lastNameSearchTerm!=null)
             filter.addFilter(deputy-> deputy.getLastName().toLowerCase().contains(lastNameSearchTerm.toLowerCase()));
         if(firstNameSearchTerm!=null)
             filter.addFilter(deputy -> deputy.getFirstName().toLowerCase().contains(firstNameSearchTerm.toLowerCase()));
         return deputies.stream().filter(filter)
                 .collect(Collectors.toList());
-    }
-
-    private class NameFilter implements Predicate<Deputy>{
-        private Collection<Predicate<Deputy>> filters;
-        public NameFilter(){
-            filters=new ArrayList<>();
-        }
-        public void addFilter(Predicate<Deputy> filter){
-            filters.add(filter);
-        }
-
-        @Override
-        public boolean test(Deputy deputy) {
-            return filters.size()==0||this.filters.stream().allMatch(predicate -> predicate.test(deputy));
-        }
     }
 }
